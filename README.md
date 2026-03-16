@@ -51,6 +51,21 @@ pnpm --filter @mister-locator/cli exec playwright install chromium
 pnpm build
 ```
 
+## Testing
+
+Run the unit tests using Vitest:
+
+```bash
+# Run all tests
+npx vitest run
+
+# Run tests in watch mode
+npx vitest
+
+# Run tests for a specific package
+npx vitest run packages/core
+```
+
 ---
 
 ## CLI usage
