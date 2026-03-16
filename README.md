@@ -3,6 +3,7 @@
 > Extract robust, resilient [Playwright](https://playwright.dev) locators from any web page — as a CLI tool or Chrome Extension.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/tapisky/mister-locator/actions/workflows/ci.yml/badge.svg)](https://github.com/tapisky/mister-locator/actions/workflows/ci.yml)
 
 ---
 
@@ -49,6 +50,21 @@ pnpm --filter @mister-locator/cli exec playwright install chromium
 
 # Build everything
 pnpm build
+```
+
+## Testing
+
+Run the unit tests using Vitest:
+
+```bash
+# Run all tests
+npx vitest run
+
+# Run tests in watch mode
+npx vitest
+
+# Run tests for a specific package
+npx vitest run packages/core
 ```
 
 ---
