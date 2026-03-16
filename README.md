@@ -152,11 +152,17 @@ The extension shows the best locator with confidence score, all alternatives, an
 mister-locator/
 ├── packages/
 │   ├── core/
-│   │   └── src/
-│   │       ├── types.ts           # Shared types
-│   │       ├── locator-engine.ts  # Ranking algorithm
-│   │       ├── dom-extractor.ts   # Browser-side DOM serialiser
-│   │       └── index.ts
+│   │   ├── src/
+│   │   │   ├── types.ts           # Shared types
+│   │   │   ├── locator-engine.ts  # Ranking algorithm
+│   │   │   ├── dom-extractor.ts   # Browser-side DOM serialiser
+│   │   │   └── index.ts
+│   │   ├── __tests__/
+│   │   │   ├── locator-engine.test.ts  # Unit tests for locator engine
+│   │   │   └── helpers.ts              # Test utilities
+│   │   ├── vitest.config.ts            # Vitest configuration
+│   │   ├── package.json                # Package config with vitest scripts
+│   │   └── tsconfig.json               # TypeScript configuration
 │   ├── cli/
 │   │   └── src/
 │   │       ├── index.ts           # CLI entry (commander)
