@@ -3,6 +3,7 @@
 > Extract robust, resilient [Playwright](https://playwright.dev) locators from any web page — as a CLI tool or Chrome Extension.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+[![CI](https://github.com/tapisky/mister-locator/actions/workflows/ci.yml/badge.svg)](https://github.com/tapisky/mister-locator/actions/workflows/ci.yml)
 
 ---
 
