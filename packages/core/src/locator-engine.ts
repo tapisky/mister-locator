@@ -14,6 +14,11 @@ function escape(value: string): string {
   return value.replace(/\\/g, '\\\\').replace(/'/g, "\\'");
 }
 
+function cssEscape(value: string): string {
+  // Simple CSS escape for selectors (basic implementation)
+  return value.replace(/([\\.:;[\]{}()^$*+?|])/g, '\\$1');
+}
+
 function truncate(value: string, max = 50): string {
   return value.length > max ? value.slice(0, max).trimEnd() + '…' : value;
 }
@@ -91,7 +96,7 @@ function tryCSS(d: ElementDescriptor): ResolvedLocator | null {
   // Prefer id-based CSS selectors
   if (d.id) {
     return {
-      expression: `page.locator('#${CSS.escape(d.id)}')`,
+      expression: `page.locator('#${cssEscape(d.id)}')`,
       strategy: 'css',
       confidence: 60,
     };
