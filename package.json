@@ -1,0 +1,23 @@
+{
+  "name": "mister-locator",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Extract robust Playwright locators from any web page — CLI & Chrome Extension",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-username/mister-locator"
+  },
+  "scripts": {
+    "build": "pnpm -r build",
+    "test": "pnpm -r test",
+    "dev:cli": "pnpm --filter @mister-locator/cli dev",
+    "dev:extension": "pnpm --filter @mister-locator/extension dev",
+    "lint": "pnpm -r lint"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@typescript-eslint/eslint-plugin": "^7.0.0",
+    "@typescript-eslint/parser": "^7.0.0",
+    "eslint": "^8.57.0"
+  }
+}

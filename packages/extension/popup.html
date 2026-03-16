@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mister Locator</title>
+  <style>
+    :root {
+      --indigo: #6366f1;
+      --indigo-dark: #4f46e5;
+      --bg: #0f0f13;
+      --surface: #1a1a24;
+      --border: #2a2a3a;
+      --text: #e2e2f0;
+      --muted: #888899;
+      --green: #4ade80;
+      --yellow: #facc15;
+      --red: #f87171;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      width: 380px;
+      min-height: 200px;
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Segoe UI', system-ui, sans-serif;
+      font-size: 13px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+      background: var(--surface);
+    }
+
+    header .logo {
+      font-size: 18px;
+    }
+
+    header h1 {
+      font-size: 14px;
+      font-weight: 600;
+      color: var(--text);
+      flex: 1;
+    }
+
+    #pick-btn {
+      padding: 6px 12px;
+      background: var(--indigo);
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      font-weight: 600;
+      transition: background 0.15s;
+    }
+    #pick-btn:hover { background: var(--indigo-dark); }
+    #pick-btn.active { background: #dc2626; }
+
+    #state-message {
+      padding: 12px 14px;
+      color: var(--muted);
+      font-size: 12px;
+      min-height: 40px;
+    }
+
+    #results {
+      padding: 0 14px 14px;
+    }
+
+    .best-locator {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 12px;
+      margin-bottom: 8px;
+    }
+
+    .best-locator .label {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--indigo);
+      margin-bottom: 6px;
+    }
+
+    .locator-code {
+      font-family: 'Cascadia Code', 'Fira Code', monospace;
+      font-size: 11px;
+      color: #c4b5fd;
+      word-break: break-all;
+      line-height: 1.5;
+    }
+
+    .meta {
+      display: flex;
+      gap: 8px;
+      margin-top: 6px;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-block;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 10px;
+      font-weight: 600;
+      background: var(--border);
+      color: var(--muted);
+    }
+
+    .confidence-high { color: var(--green); }
+    .confidence-mid { color: var(--yellow); }
+    .confidence-low { color: var(--red); }
+
+    #copy-btn {
+      margin-left: auto;
+      padding: 3px 8px;
+      background: transparent;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      border-radius: 4px;
+      font-size: 10px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    #copy-btn:hover { border-color: var(--indigo); color: var(--indigo); }
+
+    .alternatives-title {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .alt-item {
+      padding: 6px 8px;
+      border-radius: 5px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      margin-bottom: 4px;
+      cursor: pointer;
+      transition: border-color 0.1s;
+    }
+    .alt-item:hover { border-color: var(--indigo); }
+    .alt-item .locator-code { color: var(--muted); font-size: 10px; }
+  </style>
+</head>
+<body>
+  <header>
+    <span class="logo">🎯</span>
+    <h1>Mister Locator</h1>
+    <button id="pick-btn">Pick element</button>
+  </header>
+
+  <div id="state-message">Click "Pick element" then click any element on the page.</div>
+
+  <div id="results" hidden></div>
+
+  <script src="dist/popup.js"></script>
+</body>
+</html>

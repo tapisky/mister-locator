@@ -1,0 +1,25 @@
+{
+  "name": "@mister-locator/cli",
+  "version": "0.1.0",
+  "description": "CLI for mister-locator — extract Playwright locators from any URL",
+  "type": "module",
+  "bin": {
+    "mister-locator": "./dist/index.js"
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "start": "node dist/index.js"
+  },
+  "dependencies": {
+    "@mister-locator/core": "workspace:*",
+    "playwright": "^1.44.0",
+    "commander": "^12.1.0",
+    "chalk": "^5.3.0",
+    "ora": "^8.0.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.4.5",
+    "@types/node": "^20.14.0"
+  }
+}
